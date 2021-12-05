@@ -67,9 +67,7 @@ class ProductsListViewModel {
     }
     private func processFetchedProducts( products: [ProductData] ) {
         self.products = products // Cache
-        self.products.forEach({ productListModel in
-            self.cellViewModels.append(ProductCellViewModel(data: productListModel))
-        })
+        self.cellViewModels = self.products.compactMap { ProductCellViewModel(data: $0) }
     }
     func getCellViewModel( at indexPath: IndexPath ) -> ProductCellViewModel {
         return cellViewModels[indexPath.row]

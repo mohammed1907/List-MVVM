@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" rowHeight="143" id="m4H-QE-nSv" customClass="ProductTableViewCell" customModule="ProductList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4H-QE-nSv" id="W94-8u-baz">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-zb-0pI">
+                        <rect key="frame" x="16" y="34" width="60" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="XwJ-GS-pye"/>
+                            <constraint firstAttribute="width" constant="60" id="wrE-xN-kLV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="NESCAFE  CLASSIC Hot  &amp; Taste  Classic Nescafe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-WW-Ya8">
+                        <rect key="frame" x="84" y="52.5" width="204" height="33"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                        <color key="textColor" name="TextMidGray"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAz-0x-UZm">
+                        <rect key="frame" x="16" y="8" width="288" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXX-d5-pzM">
+                        <rect key="frame" x="30.5" y="120.5" width="31.5" height="14.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="mAz-0x-UZm" secondAttribute="trailing" constant="16" id="H5Q-GC-xbF"/>
+                    <constraint firstItem="ZdX-zb-0pI" firstAttribute="top" secondItem="mAz-0x-UZm" secondAttribute="bottom" constant="8" symbolic="YES" id="HJd-dS-uKX"/>
+                    <constraint firstItem="aXX-d5-pzM" firstAttribute="top" secondItem="ZdX-zb-0pI" secondAttribute="bottom" constant="16.5" id="HrA-jS-C1z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wf3-WW-Ya8" secondAttribute="trailing" constant="16" id="Pcm-2p-RIM"/>
+                    <constraint firstAttribute="bottom" secondItem="aXX-d5-pzM" secondAttribute="bottom" constant="8" id="YEZ-xd-ahl"/>
+                    <constraint firstItem="Wf3-WW-Ya8" firstAttribute="centerY" secondItem="ZdX-zb-0pI" secondAttribute="centerY" id="Zka-CU-Rhr"/>
+                    <constraint firstItem="mAz-0x-UZm" firstAttribute="leading" secondItem="W94-8u-baz" secondAttribute="leading" constant="16" id="a49-mP-QTO"/>
+                    <constraint firstItem="mAz-0x-UZm" firstAttribute="top" secondItem="W94-8u-baz" secondAttribute="top" constant="8" id="a7k-Br-ZKW"/>
+                    <constraint firstItem="ZdX-zb-0pI" firstAttribute="leading" secondItem="W94-8u-baz" secondAttribute="leading" constant="16" id="azo-HW-qOp"/>
+                    <constraint firstItem="aXX-d5-pzM" firstAttribute="centerX" secondItem="ZdX-zb-0pI" secondAttribute="centerX" id="mCR-aM-sd3"/>
+                    <constraint firstItem="Wf3-WW-Ya8" firstAttribute="leading" secondItem="ZdX-zb-0pI" secondAttribute="trailing" constant="8" id="nNT-iA-Uqr"/>
+                    <constraint firstItem="mAz-0x-UZm" firstAttribute="centerX" secondItem="W94-8u-baz" secondAttribute="centerX" id="vcu-FS-Xui"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="kYb-aU-E83"/>
+            <connections>
+                <outlet property="categoryLabel" destination="mAz-0x-UZm" id="UEA-Zb-t8o"/>
+                <outlet property="mainImageView" destination="ZdX-zb-0pI" id="f9W-H2-umA"/>
+                <outlet property="nameLabel" destination="Wf3-WW-Ya8" id="OEX-oX-zRn"/>
+                <outlet property="priceLabel" destination="aXX-d5-pzM" id="Psk-wk-yFX"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="126.89732142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TextMidGray">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

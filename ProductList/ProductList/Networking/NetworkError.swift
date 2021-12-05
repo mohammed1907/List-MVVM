@@ -8,7 +8,6 @@
 import Foundation
 
 enum NetworkError: Error {
-    case requestTimeout
     case internalServerError
     case clientErrors
     case parsingError
@@ -19,8 +18,6 @@ enum NetworkError: Error {
 extension NetworkError: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .requestTimeout:
-            return "Request timeout"
         case .internalServerError:
             return "Internal Server error"
         case .clientErrors:

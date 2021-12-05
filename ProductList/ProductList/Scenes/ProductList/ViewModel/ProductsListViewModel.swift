@@ -12,7 +12,7 @@ class ProductsListViewModel {
 
     private var products: [ProductData] = [ProductData]()
     
-    private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
+     var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
         }
@@ -66,8 +66,7 @@ class ProductsListViewModel {
         }
     }
     private func processFetchedProducts( products: [ProductData] ) {
-        self.products = products // Cache
-        self.cellViewModels = self.products.compactMap { ProductCellViewModel(data: $0) }
+        self.cellViewModels = products.compactMap { ProductCellViewModel(data: $0) }
     }
     func getCellViewModel( at indexPath: IndexPath ) -> ProductCellViewModel {
         return cellViewModels[indexPath.row]

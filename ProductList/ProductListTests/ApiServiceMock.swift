@@ -11,16 +11,11 @@ import Foundation
 class ApiServiceMock: ProductService {
     var isFetchDataCalled = false
     var completeData: [ProductData] = [ProductData]()
-    var completeClosure: (([ProductData], NetworkError?) -> ())!
+    var completeClosure: ((Result<[ProductData], NetworkError>) -> ())!
+
     func getProducts(completion: @escaping (Result<[ProductData], NetworkError>) -> ()) {
         isFetchDataCalled = true
+        completeClosure = completion
     }
-    func fetchSuccess() {
-        completeClosure( completeData, nil )
-    }
-
-    func fetchFail(error: NetworkError?) {
-        completeClosure( completeData, error )
-    }
-
+   
 }

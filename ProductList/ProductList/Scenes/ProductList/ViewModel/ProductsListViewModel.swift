@@ -10,9 +10,13 @@ import Foundation
 class ProductsListViewModel {
     let apiService: ProductService
 
-    private var products: [ProductData] = [ProductData]()
+    var products: [ProductData] = [ProductData](){
+        didSet{
+            self.processFetchedProducts(products: products)
+        }
+    }
     
-     var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
+    private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
         }
@@ -55,7 +59,7 @@ class ProductsListViewModel {
             }
             switch result {
             case .success(let data):
-                self.processFetchedProducts(products: data)
+             self.products = data
               self.state = .populated
             case .failure(let error):
                 self.state = .error

@@ -11,8 +11,7 @@ import XCTest
 class ProductListViewModelTest: XCTestCase {
     var sut: ProductsListViewModel!
     var apiServiceMock: ApiServiceMock!
-    let product =  ProductData(id: 1, title: "farghaly", price: 120.9, welcomeDescription: "hello", category: "mens", image: "https//image", rating: Rating(rate: 3.5, count: 10))
-    
+
     override func setUp() {
         super.setUp()
         apiServiceMock = ApiServiceMock()
@@ -30,25 +29,32 @@ class ProductListViewModelTest: XCTestCase {
 
         // When
         sut.initFetch()
-    
+
         // Assert
         XCTAssert(apiServiceMock!.isFetchDataCalled)
     }
     
-    func test_fetch_product_fail() {
+    func test_loading_state_when_fetching() {
         
-        // Given a failed fetch with a certain failure
-        let error = NetworkError.unknownError
+        //Given
+        var state: State = .empty
+        let expect = XCTestExpectation(description: "Loading state updated to populated")
+        sut.updateLoadingStatus = { [weak sut] in
+            state = sut!.state
+            expect.fulfill()
+        }
         
-        // When
+        //when fetching
         sut.initFetch()
         
-        apiServiceMock.fetchFail(error: error )
-        
-        // Sut should display predefined error message
-        XCTAssertEqual( sut.alertMessage, error.failureReason )
-        
+        // Assert
+        XCTAssertEqual(state, State.loading)
+
+      
+
+        wait(for: [expect], timeout: 1.0)
     }
+    
 
 
 }

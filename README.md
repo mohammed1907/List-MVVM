@@ -1,2 +1,4 @@
 # List-MVVM
-product list with mvvm and native network
+Simple project for getting products and list them using native network and mvvm with native binding using closure 
+
+ 

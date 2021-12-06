@@ -10,12 +10,11 @@ import Foundation
 class ProductsListViewModel {
     let apiService: ProductService
 
-    var products: [ProductData] = [ProductData](){
-        didSet{
+    var products: [ProductData] = [ProductData]() {
+        didSet {
             self.processFetchedProducts(products: products)
         }
     }
-    
     private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -28,32 +27,27 @@ class ProductsListViewModel {
             self.updateLoadingStatus?()
         }
     }
-    
     var alertMessage: String? {
         didSet {
             self.showAlertClosure?()
         }
     }
-    
     var numberOfCells: Int {
         return cellViewModels.count
     }
-    
     var isAllowSegue: Bool = false
-    
     var selectedPhoto: ProductCellViewModel?
 
-    var reloadTableViewClosure: (()->())?
-    var showAlertClosure: (()->())?
-    var updateLoadingStatus: (()->())?
+    var reloadTableViewClosure: (() -> Void)?
+    var showAlertClosure: (() -> Void)?
+    var updateLoadingStatus: (() -> Void)?
 
     init( apiService: ProductService = ProductServiceImpl()) {
         self.apiService = apiService
     }
-    
     func initFetch() {
         state = .loading
-        apiService.getProducts{ [weak self] result in
+        apiService.getProducts {[weak self] result in
             guard let self = self else {
                 return
             }

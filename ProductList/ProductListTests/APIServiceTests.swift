@@ -10,9 +10,7 @@ import XCTest
 @testable import ProductList
 
 class APIServiceTests: XCTestCase {
-    
     var sut: ProductServiceImpl?
-    
     override func setUp() {
         super.setUp()
         sut = ProductServiceImpl()
@@ -31,7 +29,7 @@ class APIServiceTests: XCTestCase {
         // When fetch popular photo
         let expect = XCTestExpectation(description: "callback")
 
-        sut.getProducts{ [weak self] result  in
+        sut.getProducts {[weak self] result in
             guard let self = self else {
                 return
             }
@@ -44,8 +42,5 @@ class APIServiceTests: XCTestCase {
             }
             self.wait(for: [expect], timeout: 3.1)
     }
-    
 }
-    
-    
 }

@@ -17,7 +17,6 @@ class ProductListViewModelTest: XCTestCase {
         apiServiceMock = ApiServiceMock()
         sut = ProductsListViewModel(apiService: apiServiceMock)
     }
-    
     override func tearDown() {
         sut = nil
         apiServiceMock = nil
@@ -33,28 +32,18 @@ class ProductListViewModelTest: XCTestCase {
         // Assert
         XCTAssert(apiServiceMock!.isFetchDataCalled)
     }
-    
     func test_loading_state_when_fetching() {
-        
-        //Given
+        // Given
         var state: State = .empty
         let expect = XCTestExpectation(description: "Loading state updated to populated")
         sut.updateLoadingStatus = { [weak sut] in
             state = sut!.state
             expect.fulfill()
         }
-        
-        //when fetching
+        // when fetching
         sut.initFetch()
-        
         // Assert
         XCTAssertEqual(state, State.loading)
-
-      
-
         wait(for: [expect], timeout: 1.0)
     }
-    
-
-
 }

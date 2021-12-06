@@ -13,7 +13,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
 
-    var productCellViewModel : ProductCellViewModel? {
+    var productCellViewModel: ProductCellViewModel? {
         didSet {
             nameLabel.text = productCellViewModel?.titleText
             categoryLabel.text = productCellViewModel?.category
